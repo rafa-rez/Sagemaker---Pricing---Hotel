@@ -10,7 +10,7 @@ Avaliação das quarta e quinta sprints do programa de bolsas Compass UOL para f
 
 2 - Criar um ambiente Docker no AWS para implementar a API descrita no próximo passo.
 
-3 - Desenvolver um serviço em python (API), utilizando algum framework http (Flask, FastApi...), que deve carregar o modelo treinado do S3 e expor um endpoint para realizar a inferência. O enpoint deve ser um POST com uma rota /api/v1/predict e receber um JSON no corpo da requisição seguindo o exemplo:
+3 - Desenvolver um serviço em python (API), utilizando algum framework http (Flask, FastApi...), que deve carregar o modelo treinado do S3 e expor um endpoint para realizar a inferência. O endpoint deve ser um POST com uma rota /api/v1/predict e receber um JSON no corpo da requisição seguindo o exemplo:
 
 ```json
 {
