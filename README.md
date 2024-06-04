@@ -45,7 +45,7 @@ Iremos utilizar esse dataset para classificar os dados por faixa de preços de a
 
 Vocês devem então **excluir a coluna avg_price_per_room** e criar um modelo que consiga classificar os dados com base na nova coluna *label_avg_price_per_room*.
 
-Armazene o dataset original e alterado no Dynamodb. O modelo treinado deverá ser armazenado no S3.
+Armazene o dataset original e alterado no AWS RDS. O modelo treinado deverá ser armazenado no S3.
 
 Será necessário explicar o porquê da escolha do modelo, como ele funciona. Também será avaliada a taxa de assertividade do modelo.
 
