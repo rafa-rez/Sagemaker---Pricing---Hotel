@@ -142,4 +142,6 @@ Diagrama de arquitetura da aplicação na AWS.
 - [Gustavo Henrique Vago Brunetti](https://github.com/GustavoBrunetti)
 - [Rafael Alves Silva Rezende](https://github.com/rafa-rez)
 
+***
+
 
