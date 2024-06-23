@@ -103,6 +103,18 @@ O dataset original e o processado foram armazenados no AWS RDS e o modelo treina
 
 ***
 
+## 🖱️ Como utilizar o sistema
+1. Acesse um dos IPs abaixo:
+- I. http://50.16.93.197:8000/docs
+- II.
+- III.
+- IV.
+2. Selecione "Try it out".
+3. Preencha os parâmetros necessários.
+4. Selecione "Execute"
+
+***
+
 
 ## Diagrama de Arquitetura AWS
 
