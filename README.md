@@ -12,7 +12,7 @@ Este projeto consiste na criação de um serviço de machine learning para class
 
 # Construção do Modelo
 
-O Hotel Reservations Dataset contém informações sobre reservas em hotéis e será utilizado para classificar os dados por faixa de preços. A equipe criou uma nova coluna chamada `label_avg_price_per_room` para categorizar as reservas em três faixas de preço:
+O [Hotel Reservations Dataset](https://www.kaggle.com/datasets/ahsan81/hotel-reservations-classification-dataset) contém informações sobre reservas em hotéis e será utilizado para classificar os dados por faixa de preços. A equipe criou uma nova coluna chamada `label_avg_price_per_room` para categorizar as reservas em três faixas de preço:
 
 1. `1` para `avg_price_per_room` ≤ 85
 2. `2` para 85 < `avg_price_per_room` < 115
@@ -20,40 +20,38 @@ O Hotel Reservations Dataset contém informações sobre reservas em hotéis e s
 
 O dataset original e o processado foram armazenados no AWS RDS e o modelo treinado foi salvo no S3.
 
-## 📂 Estrutura do Repositório
-
-- `assets/`: Diretório para armazenar imagens usadas no README.
-    - `sprint4-5.jpg`
-      
-- `src/`: Diretório que armazena o código-fonte do projeto.
-    - `api/`: Código do serviço de inferência em Python.
-        - `app.py`: Arquivo principal da aplicação.
-        - `docker-compose.yml`: Arquivo de configuração do Docker Compose.
-        - `dockerfile`: Define a imagem Docker para o serviço de inferência.
-        - `requirements.txt`: Lista de dependências Python do projeto.
-    - `python/`: Scripts Python utilizados no projeto.
-        - `sagemaker/`: Scripts para treinamento do modelo no SageMaker.
-            - `TesteKMeans.ipynb`
-            - `TesteLinearLearner.ipynb`
-            - `TesteRandomCutForest.ipynb`
-            - `TesteRandomForest.ipynb`
-        - `scripts/`: Scripts para manipulação de dados.
-            - `csv_to_rds.ipynb`
-            - `mysql_to_csv.ipynb`
-
-- `.dockerignore`: Lista de arquivos e diretórios que serão ignorados pelo Docker ao construir a imagem.
-- `.gitignore`: Lista de arquivos e diretórios que serão ignorados pelo Git.
-- `README.md`: Documentação do projeto.
-
 ***
 
+## 📂 Estrutura do Repositório
+    ├── assets/                          # Diretório para armazenar ativos como imagens usadas no README
+    │   └── sprint4-5.jpg                # Imagem usada no README
+    ├── src/                             # Diretório que armazena o código-fonte do projeto
+    │   ├── api/                         # Diretório para o código do serviço de inferência
+    │   │   ├── app/                     # Subdiretório contendo os principais componentes da aplicação
+    │   │   │   ├── main.py              # Ponto de entrada da aplicação FastAPI
+    │   │   │   ├── controllers.py       # Arquivo contendo a lógica de controle da aplicação
+    │   │   │   ├── models.py            # Arquivo contendo o carregamento e gerenciamento do modelo
+    │   │   │   └── views.py             # Arquivo contendo as rotas/endpoints da aplicação
+    │   │   ├── docker-compose.yml       # Arquivo de configuração do Docker Compose para orquestração de contêineres
+    │   │   ├── Dockerfile               # Arquivo para definição da imagem Docker da aplicação
+    │   │   ├── requirements.txt         # Lista de dependências Python necessárias para o serviço de inferência
+    │   ├── python/                      # Diretório para scripts Python auxiliares e notebooks
+    │   │   ├── sagemaker/               # Subdiretório para scripts relacionados ao Amazon SageMaker
+    │   │   │   ├── Treinamento.ipynb    # Notebook para treinamento do modelo no SageMaker
+    │   │   │   └── requirements.txt     # Lista de dependências Python necessárias para o treinamento no SageMaker
+    │   │   ├── scripts/                 # Subdiretório para scripts de manipulação de dados
+    │   │   │   ├── csv_to_rds.ipynb     # Notebook para converter CSV para RDS
+    │   │   │   ├── rds_to_csv.ipynb     # Notebook para converter RDS para CSV
+    │   │   │   └── requirements.txt     # Lista de dependências Python necessárias para os scripts de manipulação de dados
+    ├── .gitignore                       # Arquivo para especificar quais arquivos/diretórios o Git deve ignorar
+    └── README.md                        # Documentação do projeto
+    
 
 ## 🔧 Pré-requisitos
 
-`Python 3.8+`, `AWS CLI`, `Jupyter Notebook` e `Docker`
+`Python 3.11`, `AWS CLI`, `Jupyter Notebook` e `Docker`
 
 ***
-
 
 ## 🚀 Como Usar
 
@@ -85,6 +83,18 @@ O dataset original e o processado foram armazenados no AWS RDS e o modelo treina
     git checkout grupo-1
     ```
 
+4. Crie um ambiente virtual:
+    ```bash
+    Em linux:
+        pip install virtualenv virtualenvwrapper
+        python3 .11 -m venv nome_do_ambiente
+        source nome_do_ambiente/bin/activate
+
+    Em Windows:
+        pip install virtualenv virtualenvwrapper-win
+        mkvirtualenv nome_do_ambiente -p python3.11
+    ```
+
 ### Usando Python
 
 3. Instale as dependências:
@@ -99,7 +109,7 @@ O dataset original e o processado foram armazenados no AWS RDS e o modelo treina
     
 5. Acesse a API:
    ```bash
-   http://localhost:8000
+   http://localhost:8000/docs
     ```
 
 ### Usando Docker
@@ -116,14 +126,14 @@ O dataset original e o processado foram armazenados no AWS RDS e o modelo treina
     
 5. Acesse a API:
    ```bash
-   http://localhost:8000
+   http://localhost:8000/docs
     ```
 
 ***
 
 ## 🖱️ Como utilizar o sistema
 1. Acesse um dos IPs abaixo:
-- I. http://50.16.93.197:8000/docs
+- I. 
 - II.
 - III.
 - IV.
@@ -153,6 +163,7 @@ Diagrama de arquitetura da aplicação na AWS.
 - `Anaconda`
 - `Jupyter`
 - `Python`
+- `MySQL`
 
 ***
 
@@ -160,7 +171,7 @@ Diagrama de arquitetura da aplicação na AWS.
 ## ❌ Dificuldades
 
 - Lidar com a integração entre SageMaker, S3 e RDS.
-- Realizar o deploy da aplicação na AWS.
+- Rodar SageMaker em local mode
 
 ***
 
