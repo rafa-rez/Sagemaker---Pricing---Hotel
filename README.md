@@ -57,13 +57,31 @@ O dataset original e o processado foram armazenados no AWS RDS e o modelo treina
 
 ## 🚀 Como Usar
 
-1. Clone o Repositório:
+1. Em uma instância EC2, execute os seguintes comandos para instalar git e docker:
     ```bash
-    git clone https://github.com/Compass-pb-aws-2024-ABRIL/sprints-4-5-pb-aws-abril.git
+    sudo yum update -y
+    sudo yum install git -y
+    sudo yum install docker -y
+    sudo systemctl start docker
+    sudo systemctl enable docker
+    sudo curl -L "https://github.com/docker/compose/releases/download/$(curl -s https://api.github.com/repos/docker/compose/releases/latest | grep 'tag_name' | cut -d" -f4)/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
     ```
-2. Navegue até o diretório do projeto e altere para a branch "grupo-1":
+
+2. Crie a pasta .aws para inserir suas credenciais:
     ```bash
-    cd sprints-4-5-pb-aws-abril
+    curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+    unzip awscliv2.zip
+    sudo ./aws/install
+    mkdir -p ~/.aws
+    cd ~/.aws/
+    nano config 
+    nano credentials
+    ```
+    
+3. Clone o repositório:
+    ```bash
+    git clone "https://github.com/Compass-pb-aws-2024-ABRIL/sprints-4-5-pb-aws-abril.git"
     git checkout grupo-1
     ```
 
@@ -120,7 +138,7 @@ O dataset original e o processado foram armazenados no AWS RDS e o modelo treina
 
 Diagrama de arquitetura da aplicação na AWS.
 
-![AWS API Architecture]("assets/sprint4-5.jpg")
+![AWS API Architecture](assets/sprint4-5.jpg)
 
 ***
 
