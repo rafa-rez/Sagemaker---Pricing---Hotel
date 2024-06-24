@@ -129,17 +129,6 @@ O dataset original e o processado foram armazenados no AWS RDS e o modelo treina
    http://localhost:8000/docs
     ```
 
-***
-
-## 🖱️ Como utilizar o sistema
-1. Acesse um dos IPs abaixo:
-- I. 
-- II.
-- III.
-- IV.
-2. Selecione "Try it out".
-3. Preencha os parâmetros necessários.
-4. Selecione "Execute"
 
 ***
 
