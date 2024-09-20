@@ -1,9 +1,3 @@
-# Avaliação das Sprints 4 e 5 - Programa de Bolsas Compass UOL e AWS - UFES/UFLA abril/2024
-
-Avaliação da quarta e quinta sprints do programa de bolsas Compass UOL para formação em machine learning para AWS.
-
-***
-
 ## 🌐 Sobre o Projeto!
 
 Este projeto consiste na criação de um serviço de machine learning para classificação de preços de reserva em hotéis, utilizando o Hotel Reservations Dataset. O modelo foi treinado com o SageMaker da AWS, rodando localmente e a inferência foi feita por meio de uma API desenvolvida em Python. 
